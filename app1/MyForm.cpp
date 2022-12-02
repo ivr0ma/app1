@@ -33,12 +33,12 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n1_pr2+1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(m1_cl1_pr1 + scale * (cl.cl_A[i][n1_pr1] - m1_cl1_pr1), m1_cl1_pr2 + scale * (cl.cl_A[i][n1_pr2] - m1_cl1_pr2)); // добавляем очередную точку класса А
-			this->chart1->Series[0]->Points->AddXY(m1_cl1_pr1 + scale * (cl.cl_C[i][n1_pr1] - m1_cl1_pr1), m1_cl1_pr2 + scale * (cl.cl_C[i][n1_pr2] - m1_cl1_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[0]->Points->AddXY(m1_cl1_pr1 + scale * (cl.cl_D[i][n1_pr1] - m1_cl2_pr1), m1_cl1_pr2 + scale * (cl.cl_D[i][n1_pr2] - m1_cl1_pr2)); // добавляем очередную точку класса D
+			this->chart1->Series[1]->Points->AddXY(m1_cl2_pr1 + scale * (cl.cl_A[i][n1_pr1] - m1_cl2_pr1), m1_cl2_pr2 + scale * (cl.cl_A[i][n1_pr2] - m1_cl2_pr2)); // добавляем очередную точку класса А
 			this->chart1->Series[1]->Points->AddXY(m1_cl2_pr1 + scale * (cl.cl_B[i][n1_pr1] - m1_cl2_pr1), m1_cl2_pr2 + scale * (cl.cl_B[i][n1_pr2] - m1_cl2_pr2)); // добавляем очередную точку класса B
-			this->chart1->Series[1]->Points->AddXY(m1_cl2_pr1 + scale * (cl.cl_D[i][n1_pr1] - m1_cl2_pr1), m1_cl2_pr2 + scale * (cl.cl_D[i][n1_pr2] - m1_cl2_pr2)); // добавляем очередную точку класса D
-			this->chart1->Series[0]->LegendText = "класс AC";
-			this->chart1->Series[1]->LegendText = "класс BD";
+			this->chart1->Series[1]->Points->AddXY(m1_cl2_pr1 + scale * (cl.cl_C[i][n1_pr1] - m1_cl2_pr1), m1_cl2_pr2 + scale * (cl.cl_C[i][n1_pr2] - m1_cl2_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[0]->LegendText = "класс D";
+			this->chart1->Series[1]->LegendText = "класс ABC";
 			this->chart1->Series[0]->IsVisibleInLegend = 1;
 			this->chart1->Series[1]->IsVisibleInLegend = 1;
 		}
@@ -58,10 +58,11 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n2_pr2 + 1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(m2_cl1_pr1 + scale * (cl.cl_A[i][n2_pr1] - m2_cl1_pr1), m2_cl1_pr2 + scale * (cl.cl_A[i][n2_pr2] - m2_cl1_pr2)); // добавляем очередную точку класса A
-			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_C[i][n1_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса C
-			this->chart1->Series[0]->LegendText = "класс A";
-			this->chart1->Series[1]->LegendText = "класс C";
+			this->chart1->Series[0]->Points->AddXY(m2_cl1_pr1 + scale * (cl.cl_C[i][n2_pr1] - m2_cl1_pr1), m2_cl1_pr2 + scale * (cl.cl_C[i][n2_pr2] - m2_cl1_pr2)); // добавляем очередную точку класса C
+			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_A[i][n2_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_A[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса A
+			this->chart1->Series[1]->Points->AddXY(m2_cl2_pr1 + scale * (cl.cl_B[i][n2_pr1] - m2_cl2_pr1), m2_cl2_pr2 + scale * (cl.cl_B[i][n2_pr2] - m2_cl2_pr2)); // добавляем очередную точку класса B
+			this->chart1->Series[0]->LegendText = "класс C";
+			this->chart1->Series[1]->LegendText = "класс AB";
 		}
 
 		// построение дискриминантной функции
@@ -80,10 +81,10 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		this->chart1->ChartAreas[0]->AxisY->Title = "признак " + Convert::ToString(n3_pr2 + 1);
 
 		for (int i = 0; i < 15; i++) {
-			this->chart1->Series[0]->Points->AddXY(m3_cl1_pr1 + scale * (cl.cl_B[i][n3_pr1] - m3_cl1_pr1), m3_cl1_pr2 + scale * (cl.cl_B[i][n3_pr2] - m3_cl1_pr2)); // добавляем очередную точку класса B
-			this->chart1->Series[1]->Points->AddXY(m3_cl2_pr1 + scale * (cl.cl_D[i][n3_pr1] - m3_cl2_pr1), m3_cl2_pr2 + scale * (cl.cl_D[i][n3_pr2] - m3_cl2_pr2)); // добавляем очередную точку класса D
-			this->chart1->Series[0]->LegendText = "класс B";
-			this->chart1->Series[1]->LegendText = "класс D";
+			this->chart1->Series[0]->Points->AddXY(m3_cl1_pr1 + scale * (cl.cl_A[i][n3_pr1] - m3_cl1_pr1), m3_cl1_pr2 + scale * (cl.cl_A[i][n3_pr2] - m3_cl1_pr2)); // добавляем очередную точку класса A
+			this->chart1->Series[1]->Points->AddXY(m3_cl2_pr1 + scale * (cl.cl_B[i][n3_pr1] - m3_cl2_pr1), m3_cl2_pr2 + scale * (cl.cl_B[i][n3_pr2] - m3_cl2_pr2)); // добавляем очередную точку класса B
+			this->chart1->Series[0]->LegendText = "класс A";
+			this->chart1->Series[1]->LegendText = "класс B";
 		}
 
 		// построение дискриминантной функции
