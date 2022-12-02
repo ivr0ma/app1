@@ -15,7 +15,7 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 {
 	Classifier cl;          // объект класса
 	double c1, c2, x1, x2;  // коэф-ты для дискриминантной функции 
-	double scale = 0.5;
+	double scale = 0.5;     // масштаб графика
 
 	// очищаем график
 	for (int i = 0; i < 6; i++) {
