@@ -47,8 +47,8 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		c1 = n1_c1;
 		c2 = n1_c2;
 		for (int i = 0; i < 2; i++) {
-			x2 = 40 * i + 40; // способ 2 scale 0.02
-			//x2 = 40 * i + 40; // способ 1
+			//x2 = 40 * i + 40; // способ 2 scale 0.02
+			x2 = 40 * i + 40; // способ 1
 			x1 = c1 - c2 * x2;
 			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
 		}
@@ -70,8 +70,8 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		c1 = n2_c1;
 		c2 = n2_c2;
 		for (int i = 0; i < 2; i++) {
-			x2 = 50 * i + 20; // способ 2
-			//x2 = 20 * i + 40; // способ 1
+			//x2 = 50 * i + 20; // способ 2
+			x2 = 20 * i + 40; // способ 1
 			x1 = c1 - c2 * x2;
 			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
 		}
@@ -92,8 +92,8 @@ System::Void app1::MyForm::построитьГрафикToolStripMenuItem_Click
 		c1 = n3_c1;
 		c2 = n3_c2;
 		for (int i = 0; i < 2; i++) {
-			x2 = 20 * i + 40; // способ 2
-			//x2 = 60 * i + 10; // способ 1
+			//x2 = 20 * i + 40; // способ 2
+			x2 = 60 * i + 10; // способ 1
 			x1 = c1 - c2 * x2;
 			this->chart1->Series[4]->Points->AddXY(x1, x2); // добавляем очередную точку на график
 		}
